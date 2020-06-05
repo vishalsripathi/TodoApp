@@ -1,0 +1,71 @@
+<div class="container offset-10" *ngIf="toDoList">
+  <div class="row">
+    <div class="col-12">
+      <header>
+        <h1 class="display-2 text-center my-4">
+          {{ toDoList.day }}
+        </h1>
+      </header>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <div class="input-group">
+        <input
+          type="text"
+          placeholder="Enter Task"
+          class="form-control shadow-none"
+          minlength="1"
+          #TaskInput
+        />
+        <div class="input-group-append">
+          <button
+            type="button"
+            class="btn btn-primary shadow-none"
+            (click)="addTask(TaskInput.value, toDoList.id)"
+          >
+            Add
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-2">
+    <div class="col-12">
+      <hr />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <ul class="list-group" *ngFor="let task of toDoList.taskList">
+        <li class="list-group-item">
+          <div class="input-group">
+            <input
+              class="form-control"
+              [placeholder]="task.taskName"
+              disabled
+            />
+            <div class="input-group-append">
+              <button
+                type="button"
+                class="btn btn-primary shadow-none"
+                (click)="updateStatus(task, 'Closed')"
+              >
+                Done
+              </button>
+            </div>
+            <div class="input-group-append">
+              <button
+                type="button"
+                class="btn btn-danger shadow-none"
+                (click)="deleteTask(task)"
+              >
+                Delete
+              </button>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

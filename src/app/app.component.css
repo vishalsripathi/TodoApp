@@ -1,0 +1,15 @@
+.page-wrapper {
+  height: 100vh;
+}
+.page-wrapper .page-content {
+  display: inline-block;
+  width: 100%;
+  padding-top: 20px;
+}
+
+.page-wrapper .sidebar {
+  right: 0px;
+}
+.page-wrapper.toggled .page-content {
+  padding-right: 0;
+}

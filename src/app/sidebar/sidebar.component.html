@@ -1,0 +1,36 @@
+<div>
+  <span (click)="showSidebar()"
+    ><i class="fas fa-bars fa-2x menu-icon"></i>
+  </span>
+  <nav *ngIf="sidebar" id="sidebar" class="sidebar">
+    <div class="sidebar-content">
+      <div>
+        <div class="sidebar-header">
+          <a>Days List</a>
+        </div>
+
+        <div class="my-auto pt-2">
+          <div class="text-center">
+            <button class="btn btn-primary" (click)="newDay()">
+              Add Day
+            </button>
+          </div>
+        </div>
+        <hr />
+        <div class="my-auto pt-2">
+          <div class="text-center">
+            <div *ngFor="let dayEl of daysService.dayTodoList">
+              <button
+                type="button"
+                class="btn btn-success px-4 btn-default btn-lg m-2"
+                (click)="daysService.updateSelectedId(dayEl.id)"
+              >
+                {{ dayEl.day }}
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</div>
