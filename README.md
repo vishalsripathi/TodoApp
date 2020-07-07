@@ -1,6 +1,6 @@
 # Todo APP
 
-This Todo App is built using Angular FrameWork.
+This Todo App is used for organising your tasks and is built using Angular Framework.
 
 ## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for testing purposes.
